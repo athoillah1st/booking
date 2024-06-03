@@ -20,7 +20,10 @@
             <p>Harga: {{ $room->roomType->price }}</p>
             <p>Ketersediaan: {{ $room->is_available ? 'Tersedia' : 'Terisi' }}</p>
         </div>
-        <a href="{{ url('/bookings/create') }}" class="btn btn-primary">Pesan Kamar</a>
+        @if ($room->is_available)
+            <a href="{{ route('bookings.create', ['room_id' => $room->id]) }}" class="btn btn-primary">Pesan Kamar</a>
+        @endif
+        <a href="{{ route('rooms.index') }}" class="btn btn-secondary">Kembali ke Daftar Kamar</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

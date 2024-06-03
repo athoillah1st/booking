@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\BookedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoomTypeController;
 use Illuminate\Support\Facades\Route;
+
 
 // Route::get('/', function () {
 //     return view('home');
@@ -21,3 +23,9 @@ Route::get('/rooms/{id}', [RoomController::class, 'show'])->name('rooms.show');
 Route::get('/rooms/{id}/edit', [RoomController::class, 'edit'])->name('rooms.edit');
 Route::put('/rooms/{id}', [RoomController::class, 'update'])->name('rooms.update');
 Route::delete('/rooms/{id}', [RoomController::class, 'destroy'])->name('rooms.destroy');
+
+Route::get('/bookings', [BookedController::class, 'index'])->name('bookings.index');
+Route::get('/bookings/create', [BookedController::class, 'create'])->name('bookings.create');
+Route::post('/bookings', [BookedController::class, 'store'])->name('bookings.store');
+Route::get('/bookings/{id}', [BookedController::class, 'show'])->name('bookings.show');
+Route::delete('/bookings/{id}', [BookedController::class, 'destroy'])->name('bookings.destroy');

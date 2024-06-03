@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            {{-- <div class="col-md-3">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Manage Bookings</h5>
@@ -39,7 +39,7 @@
                         <a href="{{ route('bookings.index') }}" class="btn btn-primary">Go to Bookings</a>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
