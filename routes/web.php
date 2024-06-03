@@ -1,12 +1,14 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoomTypeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/roomtypes/create', [RoomTypeController::class, 'create'])->name('roomtypes.create');
 Route::post('/roomtypes', [RoomTypeController::class, 'store'])->name('roomtypes.store');
